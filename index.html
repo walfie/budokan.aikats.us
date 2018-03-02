@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- https://github.com/walfie/budokan.aikats.us -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>武道館</title>
+<style>
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media screen and (orientation: portrait) {
+  body {
+    padding: 5vw;
+    font-size: 15vw;
+  }
+}
+
+@media screen and (orientation: landscape) {
+  body {
+    padding: 5vh;
+    font-size: 15vh;
+  }
+}
+
+body {
+  background: no-repeat center center fixed url("https://pbs.twimg.com/media/DXITnSTU0AElFN6.jpg:small");
+  background-size: cover;
+  font-weight: bold;
+  font-family:
+    "ヒラギノ角ゴ Pro W3",
+    "Hiragino Kaku Gothic Pro",
+    Osaka,
+    "メイリオ",
+    Meiryo,
+    "ＭＳ Ｐゴシック",
+    "MS PGothic",
+    sans-serif;
+}
+
+@media screen and (min-device-width: 768px) {
+  body {
+    background-image: url("https://pbs.twimg.com/media/DXITnSTU0AElFN6.jpg");
+  }
+}
+
+@media screen and (min-device-width: 1024px) {
+  body {
+    background-image: url("https://pbs.twimg.com/media/DXITnSTU0AElFN6.jpg:large");
+  }
+}
+</style>
+
+</head>
+
+<body>
+<div id="content">
+<div>今日は</div>
+<span>武道館</span><span id="days"></span><span>日目</span>
+<div>です。</div>
+</div>
+
+<script>
+var budoukan = new Date(1519657200000);
+var elem = document.getElementById('days');
+var prev = 0;
+function update() {
+  var days = Math.ceil((new Date() - budoukan) / (1000 * 60 * 60 * 24));
+  if (days != prev) {
+    elem.innerHTML = days;
+    document.title = '武道館' + days + '日目';
+    prev = days;
+  }
+}
+update();
+setInterval(update, 1000);
+</script>
+</body>
+</html>
+
