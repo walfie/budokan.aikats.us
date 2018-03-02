@@ -5,27 +5,27 @@
 <meta charset="UTF-8">
 <title>武道館</title>
 <style>
-html, body {
+html {
   width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
 @media screen and (orientation: portrait) {
-  body {
+  html {
     padding: 5vw;
     font-size: 15vw;
   }
 }
 
 @media screen and (orientation: landscape) {
-  body {
+  html {
     padding: 5vh;
     font-size: 15vh;
   }
 }
 
-body {
+html {
   background: no-repeat center center fixed;
   background-size: cover;
   font-weight: bold;
@@ -41,19 +41,19 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
+  html {
     background-image: url("https://pbs.twimg.com/media/DXITnSTU0AElFN6.jpg:small");
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  body {
+  html {
     background-image: url("https://pbs.twimg.com/media/DXITnSTU0AElFN6.jpg");
   }
 }
 
 @media (min-width: 1025px) {
-  body {
+  html {
     background-image: url("https://pbs.twimg.com/media/DXITnSTU0AElFN6.jpg:large");
   }
 }
